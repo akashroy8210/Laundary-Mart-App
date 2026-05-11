@@ -13,16 +13,16 @@
         <div class="nav-bar">
             <div class="nav-logo">
                 <button class="logo">
-                    <h3>logo</h3>
+                    logo
                 </button>
 
             </div>
             <div class="nav-btn">
                 <ul>
-                    <li><a href="#home">Home</a></li>
-                    <li><a href="#booking-service">Services</a></li>
-                    <li><a href="#about us">About US</a></li>
-                    <li><a href="#contact us">Contact Us</a></li>
+                    <li class="active nav-btn-list"><a href="#home">Home</a></li>
+                    <li class="nav-btn-list"><a href="#booking-service">Services</a></li>
+                    <li class="nav-btn-list"><a href="#about us">About US</a></li>
+                    <li class="nav-btn-list"><a href="#contact us">Contact Us</a></li>
                 </ul>
             </div>
             <div class="username">
@@ -42,10 +42,8 @@
             </div>
 
             <button class="service-btn">
-                <div class="btn-detail">
-                    <ion-icon name="storefront-outline"></ion-icon>
-                    <span>Book a service today!</span>
-                </div>
+                <span><ion-icon name="storefront-outline"></ion-icon></span>
+                <span>Book a service today!</span>
             </button>
         </div>
         <div class="right">
@@ -86,98 +84,95 @@
                 </div>
                 <div class="service-hero">
                     <div class="service-item" id="dry">
-                        <ul>
-                            <li><img src="./Assets/image/laundry.png" alt="cloth-cleaning"></li>
-                            <li class="service-name">Dry cleaning</li>
-                            <li>
-                                <div class="dot"></div>
-                            </li>
-                            <li class="service-price">₹200.00</li>
-                            <button class="add-item" id="dry-cleaning">
-                                <span>Add Item</span>
-                                <ion-icon name="add-circle-outline"></ion-icon>
-                            </button>
-                        </ul>
+                        <div class="service-details">
+                            <span><img src="./Assets/image/laundry.png" alt="cloth-cleaning"></span>
+                            <span class="service-name">Dry Cleaning</span>
+                            <span class="dot"><ion-icon name="ellipse"></ion-icon> </span>
+                            <span class="service-price">₹200.00</span>
+                        </div>
+                        <button class="add-item-btn add-item" id="dry-cleaning">
+                            <span>Add Item</span>
+                            <span><ion-icon name="add-circle-outline"></ion-icon></span>
+                        </button>
                     </div>
                     <div class="service-item" id="wash">
-                        <ul>
-                            <li><img src="./Assets/image/soak.png" alt="wash-cloth-image"></li>
-                            <li class="service-name">Wash & Fold</li>
-                            <li>
-                                <div class="dot"></div>
-                            </li>
-                            <li class="service-price">₹100.00</li>
-                            <button class="add-item" id="wash-fold">
-                                <span>Add Item</span>
-                                <ion-icon name="add-circle-outline"></ion-icon>
-                            </button>
-                        </ul>
-
+                        <div class="service-details">
+                            <span><img src="./Assets/image/soak.png" alt="wash-cloth-image"></span>
+                            <span class="service-name">Wash & Fold</span>
+                            <span class="dot">
+                                <ion-icon name="ellipse"></ion-icon>
+                            </span>
+                            <span class="service-price">₹100.00</span>
+                        </div>
+                        <button class="add-item-btn add-item" id="wash-fold">
+                            <span>Add Item</span>
+                            <span><ion-icon name="add-circle-outline"></ion-icon></span>
+                        </button>
                     </div>
                     <div class="service-item" id="iron">
-                        <ul>
-                            <li><img src="./Assets/image/iron.png" alt="ironing-image"></li>
-                            <li class="service-name">Ironing</li>
-                            <li>
-                                <div class="dot"></div>
-                            </li>
-                            <li class="service-price">₹30.00</li>
-                            <button class="add-item" id="ironing">
-                                <span>Add Item</span>
-                                <ion-icon name="add-circle-outline"></ion-icon>
-                            </button>
-                        </ul>
+                        <div class="service-details">
+                            <span><img src="./Assets/image/iron.png" alt="ironing-image"></span>
+                            <span class="service-name">Ironing</span>
+                            <span class="dot">
+                                <ion-icon name="ellipse"></ion-icon>
+                            </span>
+                            <span class="service-price">₹30.00</span>
+                        </div>
+                        <button class="add-item-btn add-item" id="ironing">
+                            <span>Add Item</span>
+                            <span><ion-icon name="add-circle-outline"></ion-icon></span>
+                        </button>
+
                     </div>
                     <div class="service-item" id="stain">
-                        <ul>
-                            <li><img src="./Assets/image/spot.png" alt="stain"></li>
-                            <li class="service-name">stain removal</li>
-                            <li>
-                                <div class="dot"></div>
-                            </li>
-                            <li class="service-price">₹50.00</li>
-                            <button class="add-item" id="stain-removal">
-                                <span>Add Item</span>
-                                <ion-icon name="add-circle-outline"></ion-icon>
-                            </button>
-                        </ul>
+                        <div class="service-details">
+                            <span><img src="./Assets/image/spot.png" alt="stain"></span>
+                            <span class="service-name">stain removal</span>
+                            <span class="dot">
+                                <ion-icon name="ellipse"></ion-icon>
+                            </span>
+                            <span class="service-price">₹50.00</span>
+                        </div>
+                        <button class="add-item-btn add-item" id="stain-removal">
+                            <span>Add Item</span>
+                            <span><ion-icon name="add-circle-outline"></ion-icon></span>
+                        </button>
+
 
                     </div>
                     <div class="service-item" id="leather">
-                        <ul>
-                            <li><img src="./Assets/image/leather.png" alt="leather-image"></li>
-                            <li class="service-name">Leather & Suede Cleaning</li>
-                            <li>
-                                <div class="dot"></div>
-                            </li>
-                            <li class="service-price">₹999.00</li>
-                            <button class="add-item">
-                                <span>Add Item</span>
-                                <ion-icon name="add-circle-outline"></ion-icon>
-                            </button>
-                        </ul>
-
+                        <div class="service-details">
+                            <span><img src="./Assets/image/leather.png" alt="leather-image"></span>
+                            <span class="service-name">Leather & Suede Cleaning</span>
+                            <span class="dot">
+                                <ion-icon name="ellipse"></ion-icon>
+                            </span>
+                            <span class="service-price">₹999.00</span>
+                        </div>
+                        <button class="add-item-btn add-item">
+                            <span>Add Item</span>
+                            <span><ion-icon name="add-circle-outline"></ion-icon></span>
+                        </button>
                     </div>
                     <div class="service-item" id="dress">
-                        <ul>
-                            <li><img src="./Assets/image/wedding-dress.png" alt="Wedding-dress-image"></li>
-                            <li class="service-name">Wedding Dress Cleaning</li>
-                            <li>
-                                <div class="dot"></div>
-                            </li>
-                            <li class="service-price">₹999.00</li>
-                            <button class="add-item">
-                                <span>Add Item</span>
-                                <ion-icon name="add-circle-outline"></ion-icon>
-                            </button>
-                        </ul>
+                        <div class="service-details">
+                            <span><img src="./Assets/image/wedding-dress.png" alt="Wedding-dress-image"></span>
+                            <span class="service-name">Wedding Dress Cleaning</span>
+                            <span class="dot">
+                                <ion-icon name="ellipse"></ion-icon>
+                            </span>
+                            <span class="service-price">₹999.00</span>
+                        </div>
+                        <button class="add-item-btn add-item">
+                            <span>Add Item</span>
+                            <span><ion-icon name="add-circle-outline"></ion-icon></span>
+                        </button>
+
                     </div>
                 </div>
                 <div class="service-footer">
-                    <p>
-                        <ion-icon name="alert-circle-outline"></ion-icon>
-                        Add the items to the cart and book now
-                    </p>
+                    <span><ion-icon name="alert-circle-outline"></ion-icon></span>
+                    <span>Add the items to the cart and book now</span>
                 </div>
             </div>
             <div class="service-class">
@@ -192,14 +187,14 @@
                                     <th class="head-column">Price</th>
                                 </tr>
                             </thead>
-                            <tbody id="item-content" class="item-detail" >
-                                
+                            <tbody id="item-content" class="item-detail">
+
                             </tbody>
                         </table>
                         <div class="no-selected-item">
-                                <ion-icon name="alert-circle-outline"></ion-icon>
-                                <h5>No items added</h5>
-                                <p>Add item to the cart from the service bar</p>
+                            <ion-icon name="alert-circle-outline"></ion-icon>
+                            <h5>No items added</h5>
+                            <p>Add item to the cart from the service bar</p>
                         </div>
                         <div class="added-item-total">
                             <p>Total Amount</p>
@@ -211,31 +206,32 @@
                     </div>
                     <div class="book-now">
                         <h3>Book Now</h3>
-                        <form id="myForm">
-                            <fieldset disabled>
+                        <fieldset disabled class="fieldset">
+                            <form id="myForm">
                                 <div class="name-form">
-                                <label for="name">Full name</label>
-                                <input type="text" name="customer-name" id="name" placeholder="Enter your full name" required>
-                            </div>
-                            <div class="customer-form">
-                                <div class="customer-contact">
-                                    <label for="email">Email Id </label>
-                                    <input type="email" name="customer-email" id="email" required placeholder="abc@gmail.com">
+                                    <label for="name">Full name</label>
+                                    <input type="text" name="customer-name" id="name" placeholder="Enter your full name"
+                                        required>
                                 </div>
-                                <div class="customer-contact">
-                                    <label for="number">Phone number</label>
-                                    <input type="tel" name="number" id="number" required placeholder="1234567890">
+                                <div class="customer-form">
+                                    <div class="customer-contact">
+                                        <label for="email">Email Id </label>
+                                        <input type="email" name="customer-email" id="email" required
+                                            placeholder="abc@gmail.com">
+                                    </div>
+                                    <div class="customer-contact">
+                                        <label for="number">Phone number</label>
+                                        <input type="tel" name="number" id="number" required placeholder="1234567890">
+                                    </div>
                                 </div>
-                            </div>
-                                <button type="submit" class="btn-book-now">
+                                <button type="submit" class="btn-book-now" id="btn-book-now" disabled>
                                     Book now
                                 </button>
-                            </fieldset>
-                        </form>
-                        <div class="email-confirmation">
-                            <div class="noItem">
-                                
-                            </div>
+                            </form>
+                        </fieldset>
+
+                        <div class="success">
+
                         </div>
                     </div>
                 </div>
@@ -324,14 +320,14 @@
             </div>
         </div>
     </section>
-<script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
-<script>
-  emailjs.init("kssZ2y8-bqtgL_iif");    
-</script>
+    <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+    <script>
+        emailjs.init("kssZ2y8-bqtgL_iif");    
+    </script>
     <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
     <script src="script.js"></script>
-    
+
 
 </body>
 

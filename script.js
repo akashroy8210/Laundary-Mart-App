@@ -1,22 +1,32 @@
 const serviceBtn = document.querySelector(".service-btn");
 const logoBtn = document.querySelector(".logo");
-const addItems = document.querySelectorAll(".add-item");
+const addItems = document.querySelectorAll(".add-item-btn");
 const totalCount = document.querySelector(".count-total");
 const itemDetails = document.querySelector(".item-detail");
 const noSelecteditem = document.querySelector(".no-selected-item")
 const email = document.getElementById("email")
 const form = document.querySelector("#myForm")
 const username = document.querySelector("#name")
-const emailConfirmation = document.querySelector(".email-confirmation")
-const bookNowbtn = document.querySelector(".btn-book-now")
-const noItem = document.querySelector(".noItem")
-const fieldset = document.querySelector("fieldset")
+const success = document.querySelector(".success")
+const bookNowbtn = document.getElementById("btn-book-now")
+const list = document.querySelectorAll(".nav-btn-list")
+const fieldset=document.querySelector(".fieldset")
+// adding active class
+list.forEach((item) => {
+  item.addEventListener("click", () => {
+    list.forEach(nav => nav.classList.remove("active"));
+    item.classList.add("active")
+  })
+})
 
+// smooth scroll service
 serviceBtn.addEventListener("click", () => {
   document.getElementById("booking-service").scrollIntoView({
     behavior: "smooth"
   });
 });
+
+
 logoBtn.addEventListener("click", () => {
   document.getElementById("home").scrollIntoView({
     behavior: "smooth"
@@ -31,52 +41,80 @@ const services = [
   { id: 3, name: "Ironing", price: 30.00 },
   { id: 4, name: "stain removal", price: 50.00 },
   { id: 5, name: "leather & suede cleaning", price: 999.00 },
-  { id: 6, name: "weather dress cleaning", price: 999.00 }
+  { id: 6, name: "wedding dress cleaning", price: 999.00 }
 ]
 let cart = [];
-bookNowbtn.disabled = true;
+// checking is form edited
+fieldset.disabled = false
+let isEdited = false
+const fields = form.querySelectorAll("input")
+if (cart.length === 0) {
+  fields.forEach(field => {
+    field.addEventListener("click", () => {
+      isEdited = true
+      fieldset.disabled = true
+      onNoItem()
+    })
+  })
+} else {
+  fields.forEach(field => {
+    field.addEventListener("click", () => {
+      isEdited = false
+      fieldset.disabled = false
+      onNoItem()
+    })
+  })
+}
+
+isItemAdded();
+onNoItem();
 function isItemAdded() {
   if (cart.length === 0) {
     noSelecteditem.classList.remove("hidden");
-    bookNowbtn.disabled = true;
-    bookNowbtn.style.backgroundColor = "rgb(121, 110, 219)"
-    fieldset.disabled = true;
+    bookNowbtn.disabled = true
   } else {
     noSelecteditem.classList.add("hidden");
-    bookNowbtn.disabled = false;
-    fieldset.disabled = false;
-    bookNowbtn.style.backgroundColor = "rgb(62, 43, 235)"
+    bookNowbtn.disabled = false
   }
 }
 
 function onNoItem() {
-  if (fieldset.disabled) {
-    noItem.innerHTML = `<ion-icon name="alert-circle-outline"></ion-icon> Add the item to the cart to book`
+  if (isEdited && cart.length === 0) {
+    success.innerHTML = `<ion-icon name="alert-circle-outline"></ion-icon> Add the item to the cart to book`
+    success.classList.add("noItem")
   } else {
-    noItem.innerHTML = ""
+    isEdited = false
+    success.innerHTML = ""
   }
 }
+
 
 
 addItems.forEach((btn, id) => {
   btn.addEventListener("click", () => {
     const service = services[id];
     const exists = cart.find(item => item.id === service.id);
-
     if (!exists) {
       cart.push(service);
-      btn.style.backgroundColor = "#FFE6E6";
-      btn.innerHTML = `Remove item
-        <ion-icon name="remove-circle-outline"></ion-icon>`;
-      btn.style.padding = "10px 20px";
+      btn.innerHTML = `
+      <span>Remove Item</span><span><ion-icon name="remove-circle-outline"></ion-icon></span></span>
+      `;
+      btn.classList.remove("add-item")
+      btn.classList.add("remove-item")
+      success.innerHTML = ""
+      fieldset.disabled = false
     } else {
       cart = cart.filter(item => item.id !== service.id);
-      btn.style.backgroundColor = "#f2f2f2";
-      btn.style.padding = "10px 20px";
+      if (cart.length === 0) {
+        success.innerHTML = `<ion-icon name="alert-circle-outline"></ion-icon> Add the item to the cart to book`
+        success.classList.add("noItem")
+      }
       btn.innerHTML = `
-        Add-item
-        <ion-icon name="add-circle-outline"></ion-icon>
+        <span>Add Item</span><span><ion-icon name="add-circle-outline"></ion-icon></span>
       `;
+      btn.classList.remove("remove-item")
+      btn.classList.add("add-item")
+
     }
     isItemAdded()
     onNoItem()
@@ -121,7 +159,9 @@ form.addEventListener("submit", (e) => {
     }
   )
     .then(() => {
-      emailConfirmation.innerHTML = `<ion-icon name="alert-circle-outline"></ion-icon> Email has been sent successfully ✅`
+      success.innerHTML = `<ion-icon name="alert-circle-outline"></ion-icon> Email has been sent successfully ✅`
+      success.classList.remove("noItem")
+      success.classList.add("email-confirmation")
       form.reset();
     })
     .catch((error) => {
