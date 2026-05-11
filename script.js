@@ -52,7 +52,9 @@ if (cart.length === 0) {
   fields.forEach(field => {
     field.addEventListener("click", () => {
       isEdited = true
-      fieldset.disabled = true
+      if(cart.length === 0){
+        fieldset.disabled = true
+      }
       onNoItem()
     })
   })
